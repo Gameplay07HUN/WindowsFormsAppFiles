@@ -35,6 +35,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dateTimePickerDatum = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // richTextBoxSzoveg
@@ -50,7 +51,7 @@
             // textBoxNev
             // 
             this.textBoxNev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxNev.Location = new System.Drawing.Point(149, 58);
+            this.textBoxNev.Location = new System.Drawing.Point(150, 12);
             this.textBoxNev.Name = "textBoxNev";
             this.textBoxNev.Size = new System.Drawing.Size(269, 26);
             this.textBoxNev.TabIndex = 1;
@@ -59,7 +60,7 @@
             // 
             this.labelNev.AutoSize = true;
             this.labelNev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelNev.Location = new System.Drawing.Point(103, 61);
+            this.labelNev.Location = new System.Drawing.Point(104, 15);
             this.labelNev.Name = "labelNev";
             this.labelNev.Size = new System.Drawing.Size(40, 20);
             this.labelNev.TabIndex = 2;
@@ -68,7 +69,7 @@
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonSave.Location = new System.Drawing.Point(424, 56);
+            this.buttonSave.Location = new System.Drawing.Point(425, 10);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(73, 30);
             this.buttonSave.TabIndex = 3;
@@ -79,7 +80,7 @@
             // buttonOpen
             // 
             this.buttonOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonOpen.Location = new System.Drawing.Point(529, 58);
+            this.buttonOpen.Location = new System.Drawing.Point(530, 12);
             this.buttonOpen.Name = "buttonOpen";
             this.buttonOpen.Size = new System.Drawing.Size(81, 30);
             this.buttonOpen.TabIndex = 4;
@@ -91,11 +92,20 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // dateTimePickerDatum
+            // 
+            this.dateTimePickerDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dateTimePickerDatum.Location = new System.Drawing.Point(150, 53);
+            this.dateTimePickerDatum.Name = "dateTimePickerDatum";
+            this.dateTimePickerDatum.Size = new System.Drawing.Size(269, 26);
+            this.dateTimePickerDatum.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePickerDatum);
             this.Controls.Add(this.buttonOpen);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelNev);
@@ -117,6 +127,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button buttonOpen;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDatum;
     }
 }
 

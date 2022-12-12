@@ -25,6 +25,11 @@ namespace WindowsFormsAppFiles
                 MessageBox.Show("Nem adott meg nevet!");
                 return;
             }
+            if (dateTimePickerDatum.Value == DateTime.MinValue)
+            {
+                MessageBox.Show("Adja meg a mennyiséget!");
+                return;
+            }
             if (string.IsNullOrEmpty(richTextBoxSzoveg.Text))
             {
                 MessageBox.Show("Nem adott meg szöveget!");
@@ -32,14 +37,22 @@ namespace WindowsFormsAppFiles
             }
 
             saveFileDialog1.Filter = "Egyszerű szöveg fájl (*.txt)|*.txt|Veszővel tagolt szövegfájl (*.csv) |*.csv|Minden fájl|*.*";
+            saveFileDialog1.DefaultExt = "*.txt";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string szoveg = string.Join(";",textBoxNev.Text,richTextBoxSzoveg.Text);
-                string kiveFile=saveFileDialog1.FileName;
+                string szoveg = string.Join(";", textBoxNev.Text + " " + dateTimePickerDatum.Value, richTextBoxSzoveg.Text);
+                string kiveFile = saveFileDialog1.FileName;
+                if (File.Exists(saveFileDialog1.FileName))
+                {
+                    File.Delete(saveFileDialog1.FileName);
+                }
+
                 File.WriteAllText(kiveFile, szoveg);
                 //MessageBox.Show("A kiválaszott fájl:" + kiveFile);
                 textBoxNev.Text = "";
                 richTextBoxSzoveg.Text = "";
+                dateTimePickerDatum.Value = DateTime.Now;
+
             }
             else
             {
