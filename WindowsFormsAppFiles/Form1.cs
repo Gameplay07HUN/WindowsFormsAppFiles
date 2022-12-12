@@ -40,7 +40,7 @@ namespace WindowsFormsAppFiles
             saveFileDialog1.DefaultExt = "*.txt";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string szoveg = string.Join(";", textBoxNev.Text + " " + dateTimePickerDatum.Value, richTextBoxSzoveg.Text);
+                string szoveg = string.Join(";", textBoxNev.Text + ";" + dateTimePickerDatum.Value, richTextBoxSzoveg.Text);
                 string kiveFile = saveFileDialog1.FileName;
                 if (File.Exists(saveFileDialog1.FileName))
                 {
@@ -68,7 +68,8 @@ namespace WindowsFormsAppFiles
                 string beolvasottSzoveg = File.ReadAllText(kivFile);
                 string[] adatok = beolvasottSzoveg.Split(';');
                 textBoxNev.Text = adatok[0];
-                richTextBoxSzoveg.Text = adatok[1];
+                richTextBoxSzoveg.Text = adatok[2];
+                dateTimePickerDatum.Value =DateTime.Parse(adatok[1]);
             }
         }
     }
