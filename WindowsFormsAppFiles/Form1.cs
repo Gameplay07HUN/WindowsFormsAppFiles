@@ -38,6 +38,7 @@ namespace WindowsFormsAppFiles
 
             saveFileDialog1.Filter = "Egyszerű szöveg fájl (*.txt)|*.txt|Veszővel tagolt szövegfájl (*.csv) |*.csv|Minden fájl|*.*";
             saveFileDialog1.DefaultExt = "*.txt";
+            saveFileDialog1.FileName=textBoxNev.Text;
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string szoveg = string.Join(";", textBoxNev.Text + ";" + dateTimePickerDatum.Value, richTextBoxSzoveg.Text);
@@ -72,5 +73,6 @@ namespace WindowsFormsAppFiles
                 dateTimePickerDatum.Value =DateTime.Parse(adatok[1]);
             }
         }
+
     }
 }
